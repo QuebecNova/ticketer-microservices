@@ -9,7 +9,7 @@ it("returns current user", async () => {
     .send()
     .expect(200);
 
-  expect(response.body.currentUser.email).toStrictEqual("test@example.com");
+  expect(response.body.user.email).toStrictEqual("test@example.com");
 });
 
 it("returns 401 when not authenticated", async () => {
@@ -18,5 +18,5 @@ it("returns 401 when not authenticated", async () => {
     .send()
     .expect(401);
 
-  expect(response.body.currentUser).toBeUndefined();
+  expect(response.body.user).toBeUndefined();
 });
